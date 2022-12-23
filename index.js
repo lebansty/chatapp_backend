@@ -11,6 +11,7 @@ const server =http.createServer(app);
 
 const io=new Server(server,{
     cors:{
+        
         orgin:"https://jazzy-piroshki-a5258a.netlify.app/",
         methods:["GET","POST"]
     }
@@ -33,6 +34,4 @@ io.on("connection",(socket)=>{
     })
 })
 
-server.listen(3001,()=>{
-    console.log("Server is running....")
-})
+server.listen(process.env.PORT ||8080)
